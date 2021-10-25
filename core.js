@@ -10,11 +10,11 @@ var connect = {
 var connection = mysql.createConnection(connect); // DB 커넥션 생성
 connection.connect();   // DB 접속
 
-var createQuery = `CREATE TABLE sub_key(
-    sub_code INT,
-    sub_class INT,
-    PRIMARY KEY(sub_code),
-)   ENGINE=MYISAM CHARSET=utf8;`;
+var createQuery = "CREATE TABLE sub_key(\
+sub_code INT,\
+sub_class INT,\
+PRIMARY KEY(sub_code)\
+);";
 
 connection.query(createQuery, function (err, results, fields) { // testQuery 실행
     if (err) {
